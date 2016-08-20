@@ -24,5 +24,3 @@ def h():
     puts(green('  查看命令: fab -d 命令'))
     puts(yellow('  带参数命令请输入: fab 命令:参数'))
     puts('*' * 50)
-
-@task
