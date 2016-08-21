@@ -9,6 +9,7 @@ from fabric.operations import local
 from fabric.state import env
 from fabric.utils import puts
 
+from ipa import *
 
 env.version = '0.8.8'
 env.pgyer_user_key = 'ed8775a2cdb22fd27ad1fa285bf98b2c'
@@ -38,4 +39,4 @@ def upload_to_pgyer():
 @task
 def upload_fir():
     """自动打包上传到fir"""
-    print("ok")
+    main()
