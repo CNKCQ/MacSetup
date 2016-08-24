@@ -12,10 +12,11 @@ from fabric.utils import puts
 from ipa import *
 
 env.version = '0.8.8'
-env.pgyer_user_key = 'ed8775a2cdb22fd27ad1fa285bf98b2c'
-env.pgyer_api_key = '74000a9013d6894c84edef033b9ad67d'
+env.pgyer_user_key = '77052141e0dd09784a065d3df33b792f'
+env.pgyer_api_key = '1d20194f501175be5ff08473b986295a'
 
-
+env.project_name = os.path.basename(os.path.dirname(__file__))
+env.from_address = '你好'
 # ============
 # =  Hello   =
 # ============
@@ -37,6 +38,6 @@ def upload_to_pgyer():
     local('ipa build')
     local('ipa distribute:pgyer -u {0.pgyer_user_key} -a {0.pgyer_api_key}'.format(env))
 @task
-def upload_fir():
+def upload_to_fir():
     """自动打包上传到fir"""
     main()
