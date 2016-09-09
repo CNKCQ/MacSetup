@@ -1,7 +1,7 @@
 #! bin/bash
 #Author:CNKCQ https://kingcq.github.io
 #Update Date:2016.08.23
-#Use:命令行进入目录直接执行sh build_deploy_fir.sh即可完成打包发布到fir.im
+#Use:命令行进入目录直接执行sh build_deploy.sh即可完成打包发布到fir.im
 
 export LC_ALL=zh_CN.GB2312;
 export LANG=zh_CN.GB2312
