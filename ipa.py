@@ -98,4 +98,4 @@ def main():
     # 发邮件
     send_mail()
 # 执行
-# main()
+main()
