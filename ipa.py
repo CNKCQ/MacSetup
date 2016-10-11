@@ -11,7 +11,8 @@ import smtplib
 
 # 项目根目录
 project_path = os.path.dirname(os.path.realpath(__file__))
-project_name = os.path.basename(os.path.dirname(__file__))
+project_name = os.path.basename(project_path)
+
 # 编译成功后.app所在目录
 app_path = '%s/build/Build/Products/Release-iphoneos/%s.app' % (project_path, project_name)
 # 指定项目下编译目录
@@ -40,8 +41,8 @@ def clean_project_mkdir_build():
     os.system('`/usr/libexec/PlistBuddy -c "Print CFBundleVersion" %s`' % infoPlist)
 def build_project():
     print("build release start")
-    os.system ('xcodebuild -list')
-    os.system ('cd %s/;xcodebuild -workspace %s.xcworkspace  -scheme %s -configuration release -derivedDataPath %s ONLY_ACTIVE_ARCH=NO || exit' % (project_path ,project_name, project_name, build_path))
+    # os.system ('xcodebuild -list')
+    os.system ('cd %s/;xcodebuild -workspace %s.xcworkspace  -scheme %s -configuration Release -derivedDataPath %s ONLY_ACTIVE_ARCH=NO || exit' % (project_path ,project_name, project_name, build_path))
 # CONFIGURATION_BUILD_DIR=./build/Release-iphoneos
 
 # 打包ipa 并且保存在桌面
@@ -96,6 +97,6 @@ def main():
     upload_fir()
     upload_to_pgyer()
     # 发邮件
-    send_mail()
+    # send_mail()
 # 执行
 main()

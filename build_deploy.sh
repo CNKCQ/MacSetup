@@ -92,6 +92,6 @@ echo "正在上传到pyger..."
 echo "ipa distribute:pgyer -u ${pgyer_user_key} -a ${pgyer_api_key}"
 ipa distribute:pgyer -u $pgyer_user_key -a $pgyer_api_key
 echo "\n打包上传更新成功！"
-say 打包上传更新成功 !
+# say 打包上传更新成功 !
 rm -rf $buildAppToDir
 rm -rf $projectDir/tmp
