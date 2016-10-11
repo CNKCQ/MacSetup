@@ -68,15 +68,11 @@ def upload_to_pgyer():
     else:
         print("没有找到ipa文件")
 
-def _format_address(s):
-    name, address = parseaddress(s)
-    return formataddress((Header(name, 'utf-8').encode(), address))
-
-# 发邮件
+# 发邮件 https://docs.python.org/2.7/library/email-examples.html
 def send_mail():
     msg = MIMEText('%s iOS测试项目已经打包完毕，请前往 http://fir.im/ %s 下载测试！' % (project_name, project_name), 'plain', 'utf-8')
-    msg['From'] = _format_address('自动打包系统 <%s>' % from_address)
-    msg['To'] = _format_address('%s测试人员 <%s>' % (project_name, to_address))
+    msg['From'] = '自动打包系统 <%s>' % (from_address)
+    msg['To'] = '%s测试人员 <%s>' % (project_name, to_address)
     msg['Subject'] = Header('%s iOS客户端打包程序' % project_name, 'utf-8').encode()
     server = smtplib.SMTP(smtp_server, 25)
     server.set_debuglevel(1)
@@ -94,9 +90,9 @@ def main():
     # 打包ipa 并制定到桌面
     build_ipa()
     # 上传fir
-    upload_fir()
+    # upload_fir()
     upload_to_pgyer()
     # 发邮件
-    # send_mail()
+    send_mail()
 # 执行
 main()
