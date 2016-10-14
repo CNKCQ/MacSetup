@@ -22,14 +22,14 @@ target_ipa_path = project_path
 infoPlist = "%s/%s/Info.plist" % (project_path, project_name)
 
 
-# firm的api token
+# 需要手动配置的全局参数
 fir_api_token = "349e895ca7aceeafd4bca1eac5e0ab3b"
 pgyer_user_key = '77052141e0dd09784a065d3df33b792f'
 pgyer_api_key = '1d20194f501175be5ff08473b986295a'
-from_address = "wangchengqvan@163.com"
-password = "wcq249718"
+from_address = "123@163.com" # 发送邮件地址
+password = "he231" # 发送邮件密码
 smtp_server = "smtp.163.com"
-to_address = ['1920452890@qq.com','2280534011@qq.com','1844368740@qq.com']
+to_address = ['890@qq.com','4011@qq.com','740@qq.com'] # 收件地址
 
 
 # 清理项目 创建build目录
@@ -53,7 +53,7 @@ def build_ipa():
     os.system ('xcrun -sdk iphoneos PackageApplication -v %s -o %s/%s'%(app_path,target_ipa_path,ipa_filename))
     print('~~~~~~~~~~~~~~~~~~~结束编译，处理成功~~~~~~~~~~~~~~~~~~~')
 #上传
-def upload_fir():
+def upload_to_fir():
     if os.path.exists("%s/%s" % (target_ipa_path,ipa_filename)):
         print('正在上传到fir.im....')
         # 直接使用fir 有问题 这里使用了绝对地址 在终端通过 which fir 获得
@@ -90,7 +90,7 @@ def main():
     # 打包ipa 并制定到桌面
     build_ipa()
     # 上传fir
-    # upload_fir()
+    # upload_to_fir()
     upload_to_pgyer()
     # 发邮件
     send_mail()

@@ -1,23 +1,19 @@
 #! bin/bash
 #Author:CNKCQ https://kingcq.github.io
 #Update Date:2016.08.23
-#Use:命令行进入目录直接执行sh build_deploy.sh即可完成打包发布到fir.im
+#Use:命令行进入目录直接执行sh build_deploy.sh即可完成打包发布到fir.im or pyger
 
 export LC_ALL=zh_CN.GB2312;
 export LANG=zh_CN.GB2312
 ###############设置需编译的项目配置名称
 export buildConfig="Release" #编译的方式,有Release,Debug，自定义的AdHoc等
-export fir_api_token="349e895ca7aceeafd4bca1eac5e0ab3b"
-export pgyer_user_key="77052141e0dd09784a065d3df33b792f"
-export pgyer_api_key="1d20194f501175be5ff08473b986295a"
+export fir_api_token="___you fir API  Token___"
+export pgyer_user_key="___you pgyer User Key___ "
+export pgyer_api_key="___you pgyer API Key___"
 # cd /Users/KingCQ/OpenSource/OSCHINA/ 定时任务时需要打开并配置项目所在路径
 
-##########################################################################################
-##############################以下部分为自动生产部分，不需要手动修改############################
-##########################################################################################
 projectName=`find . -name *.xcodeproj | awk -F "[/.]" '{print $(NF-1)}'` #项目名称
 projectDir=`pwd` #项目所在目录的绝对路径
-# IPADir=~/Desktop/$projectName-IPA #ipa，icon最后所在的目录绝对路径
 IPADir=$projectDir #ipa，icon最后所在的目录绝对路径
 isWorkSpace=true  #判断是用的workspace还是直接project，workspace设置为true，否则设置为false
 echo $projectName
