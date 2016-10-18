@@ -28,10 +28,10 @@ env.infoPlist = '{0.project_path}/{0.project_name}/Info.plist'.format(env)
 env.fir_api_token = "349e895ca7aceeafd4bca1eac5e0ab3b"
 env.pgyer_user_key = '77052141e0dd09784a065d3df33b792f'
 env.pgyer_api_key = '1d20194f501175be5ff08473b986295a'
-env.from_address = "wangchengqvan@163.com" # 发送邮件地址
-env.password = "wcq249718" # 发送邮件密码
+env.from_address = "发件" # 发送邮件地址
+env.password = "密码" # 发送邮件密码
 env.smtp_server = "smtp.163.com"
-to_address = ['1920452890@qq.com','2280534011@qq.com','1844368740@qq.com'] # 收件地址
+to_address = ['收件'] # 收件地址
 
 
 # 清理项目 创建build目录
