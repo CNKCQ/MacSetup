@@ -1,5 +1,5 @@
 # MacSetup
-a tool to setup you mac os
+a tool to setup your mac os
 ## start with python Development environment
 ```bash
 sudo easy_install -U pip
