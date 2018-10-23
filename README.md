@@ -3,7 +3,7 @@ a tool to setup your mac os
 ## start with python Development environment
 ```bash
 sudo easy_install -U pip
-sudo pip install Fabric -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo -H pip install Fabric==1.14 -i https://pypi.douban.com/simple/
 ```
 ---
 ### download the Executable file
